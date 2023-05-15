@@ -1,0 +1,14 @@
+.justify-content-sm-center{
+    background-image: linear-gradient(rgb(236, 198, 198), lightblue, lightyellow);
+    box-shadow: 2px 2px 5px 5px rgb(201, 209, 231);
+}
+
+.row{
+    box-shadow: 2px 2px 5px 5px rgb(155, 173, 155);
+}
+.container{
+    justify-content: center;
+    width: 70%;
+    height: 90%;
+    margin-top: 2%;
+}

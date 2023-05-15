@@ -1,0 +1,72 @@
+<div class="container pt-3">
+  <div class="row justify-content-sm-center pt-4">
+      <div class="col-sm-6 shadow round pb-3">
+        <h1 class="text-center pt-3 text-secondary" style="font-style: italic;text-shadow: 20px;color: crimson;">Registration Form</h1>
+        <hr>
+          <form [formGroup]="exform" (ngSubmit)="clicksub()" novalidate>
+            <div class="row">
+                <div class="form-group">
+                  <label class="col-form-label">Name:</label>
+                  <input formControlName="name" placeholder="Enter your name" required type="text" class="form-control">
+                  <div *ngIf="submiting && getAllValidation.name.errors">
+                    <div style="color: red;" *ngIf="getAllValidation.name.errors.required">This field is required</div>
+                    <div *ngIf="">  </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">Username:</label>
+                    <input formControlName="username" placeholder="Enter your username" type="text" class="form-control">
+                    <div *ngIf="submiting && getAllValidation.username.errors">
+                      <div style="color: red;" *ngIf="getAllValidation.username.errors.required">This field is required</div>
+                      <div style="color: red;" *ngIf="getAllValidation.username.errors.pattern">This field is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label">Email:</label>
+                  <input formControlName="email" placeholder="example@gmail.com" type="email" required class="form-control">
+                  <div *ngIf="submiting && getAllValidation.name.errors">
+                    <div style="color: red;" *ngIf="getAllValidation.email.errors.required">This field is required</div>
+                    <div style="color: red;" *ngIf="getAllValidation.email.errors.pattern">Invalid Email</div>
+                  </div>
+                </div>
+                
+                <div class="form-group col-sm-6">
+                  <label class="col-form-label">Phone:</label>
+                  <input formControlName="phone" type="text" maxlength="10" placeholder="Enter your Phone Number" required class="form-control">
+                  <div *ngIf="submiting && getAllValidation.name.errors">
+                    <div style="color: red;" *ngIf="getAllValidation.phone.errors.required">This field is required</div>
+                    <div style="color: red;" *ngIf="getAllValidation.phone.errors.pattern">You can only use numbers</div>
+                  </div>
+                </div>
+                <div class="form-group col-sm-6 mt-3">
+                  <label> Gender </label>
+                  <br>
+                  <input class="form-check-input" type="radio" name="gender" id="male">
+                  <label class="form-check-label"> Male </label> &nbsp;
+                  <input class="form-check-input" type="radio" name="gender" id="female">
+                  <label class="form-check-label"> Female </label>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-form-label">Password:</label>
+                  <input type="password" formControlName="password" id="password" name="password" placeholder="Enter your password" class="form-control"/>
+                <div *ngIf="submiting && getAllValidation.name.errors">
+                  <div style="color: red;" *ngIf="getAllValidation.password.errors.required">This field is required</div>
+                </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">Confirm Password:</label>
+                    <input type="password" class="form-control" formControlName="conpassword" id="conpassword" name="conpassword" placeholder="Enter your password again" />
+                    <div *ngIf="submiting && getAllValidation.name.errors">
+                      <div style="color: red;" *ngIf="getAllValidation.conpassword.errors.required">This field is required</div>
+                    </div>
+                </div>
+                <div class="mt-3 m-1">
+                    <button type="submit" class="btn btn-primary"> Register </button> &nbsp;
+                    <a class="btn btn-outline-success" routerLink="/login"> Already Registered? Login! </a>
+                </div>
+              </div>
+            </form>
+      </div>
+  </div>
+</div>

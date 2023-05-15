@@ -1,0 +1,33 @@
+.border{
+    width: 70%;
+    padding: 15px;
+    margin-left: 15%;
+    margin-top: 11%;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px 2px rgb(97, 97, 64);
+    box-sizing: content-box;
+    background-image: linear-gradient(lightgrey, lightblue, lightyellow);
+}
+
+
+
+.btn-login{
+    border-radius: 9px;
+    shape-outside: margin-box;
+    box-shadow: 2px 2px 2px;
+    width: 10%;
+    height: 40px;
+}
+
+.btn-login:hover{
+    background-color: rgb(199, 33, 185);
+}
+
+.btn{
+    border-radius: 9px;
+    shape-outside: margin-box;
+    box-sizing: 20px;
+    box-shadow: 2px 2px 2px;
+    width: 25%;
+    height: 40px;
+}

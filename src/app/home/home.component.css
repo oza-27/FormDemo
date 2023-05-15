@@ -1,0 +1,29 @@
+
+
+.nav-item a:hover{
+    background-image: linear-gradient(lightblue,lightpink,lightgrey);
+    box-shadow: 2px 2px 2px;
+    box-decoration-break: slice;
+    clear: inherit;   
+}
+
+.nav-item2 a:hover{
+    background-image: linear-gradient(lightyellow,brown,pink);
+    box-shadow: 2px 2px 2px;
+    box-decoration-break: slice;
+    font-size: 20px;
+    clear: inherit;
+}
+
+.nav-item a:focus{
+    background-color: rgb(96, 50, 180);
+    display: contents;
+    
+}
+.nav-item2 a:focus {
+    background-color: rgb(37, 76, 128);
+}
+
+.nav-link:focus-visible{
+    background-attachment: fixed;
+}
