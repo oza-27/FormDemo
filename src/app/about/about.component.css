@@ -20,3 +20,9 @@
     text-align: center;
     font-stretch: condensed;
 }
+
+img{
+    position: relative;
+    align-items: self-start;
+    margin: 1%;
+}
