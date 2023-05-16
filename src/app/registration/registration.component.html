@@ -41,10 +41,14 @@
                 <div class="form-group col-sm-6 mt-3">
                   <label> Gender </label>
                   <br>
-                  <input class="form-check-input" type="radio" name="gender" id="male">
+                  <input class="form-check-input" formControlName="male" required type="radio" name="gender" id="male">
                   <label class="form-check-label"> Male </label> &nbsp;
-                  <input class="form-check-input" type="radio" name="gender" id="female">
+                  <input class="form-check-input" formControlName="female" required type="radio" name="gender" id="female">
                   <label class="form-check-label"> Female </label>
+                  <div *ngIf="submiting && getAllValidation.male.errors">
+                    <div style="color: red;" *ngIf="getAllValidation.male.errors.required">This field is required</div>
+                    <div style="color: red;" *ngIf="getAllValidation.female.errors.required">This field is required</div>
+                  </div>
                 </div>
 
                 <div class="form-group">
@@ -52,6 +56,7 @@
                   <input type="password" formControlName="password" id="password" name="password" placeholder="Enter your password" class="form-control"/>
                 <div *ngIf="submiting && getAllValidation.name.errors">
                   <div style="color: red;" *ngIf="getAllValidation.password.errors.required">This field is required</div>
+                  <div style="color: red;" *ngIf="getAllValidation.password.errors.minLength">Password required minimum 8 characters </div>
                 </div>
                 </div>
                 <div class="form-group">
@@ -59,6 +64,8 @@
                     <input type="password" class="form-control" formControlName="conpassword" id="conpassword" name="conpassword" placeholder="Enter your password again" />
                     <div *ngIf="submiting && getAllValidation.name.errors">
                       <div style="color: red;" *ngIf="getAllValidation.conpassword.errors.required">This field is required</div>
+                      <div style="color: red;" *ngIf="getAllValidation.password.errors.pattern">Password does not match with requirements...
+                      </div>
                     </div>
                 </div>
                 <div class="mt-3 m-1">

@@ -1,24 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { IDemo } from '../idemo';
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css']
 })
-export class RegistrationComponent implements OnInit {
+export class RegistrationComponent implements OnInit, IDemo {
   exform: FormGroup;
   submiting:boolean=false;
+  demoName = "Soumy";
+  demoNumber =  2300;
+  demoId = 23;
+
   constructor(public router:Router, public fb:FormBuilder) { }
   ngOnInit(): void {
     this.exform = this.fb.group({
       name: [null, Validators.required],
       email: [null, [Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
       username: [null, [Validators.required, Validators.pattern('^[a-zA-Z0-9]+$')]],
+      male: [null, [Validators.required]],
+      female: [null, [Validators.required]],
       phone: [null, [Validators.required, Validators.pattern('^[0-9]*$')]],
-      password: [null, [Validators.required, Validators.minLength(8)]],
-      conpassword: [null, [Validators.required, this.validateConfirmPassword.bind(this), Validators.minLength(8)]]
+      password: [null, [Validators.required, Validators.pattern('^(?=.*[A-Za-z])(?=.*[@])[A-Za-z\d$@$!%*#?&]{8,}$/".')]],
+      conpassword: [null, [Validators.required, this.validateConfirmPassword.bind(this), Validators.pattern('^(?=.*[A-Za-z])(?=.*[@])[A-Za-z\d$@$!%*#?&]{8,}$/".')]]
     });
   }
 
@@ -36,7 +43,8 @@ export class RegistrationComponent implements OnInit {
     } 
     else
     {
-      console.log(this.exform.value);
+      debugger
+      console.log("-" + this.demoId + ":" + this.demoName + ":" + this.demoNumber);
       this.submiting = false;
       this.router.navigate(["login"]);
     }
